@@ -1,4 +1,4 @@
-# 📘 Proyecto 3 – Plataforma de Gestión de Cursos  
+# Proyecto 3 – Plataforma de Gestión de Cursos  
 **Angular 17 — Coderhouse**
 
 Este proyecto corresponde a la **Tercera Entrega del Proyecto Final** del curso de Angular de Coderhouse.  
@@ -16,24 +16,24 @@ El objetivo es aplicar en un solo proyecto todo lo aprendido durante la cursada:
 
 ---
 
-# ⭐ Características principales del proyecto
+# Características principales del proyecto
 
-### 🔐 Autenticación
+### Autenticación
 - Login con email y contraseña.
 - Servicio `AuthService` conectado a MockAPI.
 - Token almacenado en `localStorage`.
 - Usuario actual disponible mediante un `BehaviorSubject`.
 
-### 💼 Roles
+### Roles
 - Rol **admin** → acceso a *Usuarios* + todo el sistema.
 - Rol **user** → acceso a secciones funcionales (alumnos, cursos, inscripciones).
 - `RoleGuard` protege rutas según permisos.
 
-### 🛡 Protección de rutas
+### Protección de rutas
 - `AuthGuard` evita el acceso sin login.
 - Redirecciones automáticas cuando no hay sesión activa.
 
-### 🧱 Arquitectura modular
+### Arquitectura modular
 - Módulo `auth/`
 - Módulo `layout/`
 - Módulo `core/` (servicios, guards, interceptores)
@@ -46,12 +46,12 @@ El objetivo es aplicar en un solo proyecto todo lo aprendido durante la cursada:
 
 Con Lazy Loading en todas las secciones.
 
-### 🧭 Layout profesional
+### Layout profesional
 - Toolbar con nombre del usuario + logout
 - Sidenav dinámico según rol
 - Router outlet principal
 
-### 📚 Conexión a MockAPI
+### Conexión a MockAPI
 El proyecto utiliza endpoints REST para manejar:
 
 - Usuarios
@@ -63,7 +63,7 @@ Incluye CRUD según corresponde.
 
 ---
 
-# 🏗 Tecnologías utilizadas
+# Tecnologías utilizadas
 
 - Angular 17
 - TypeScript
@@ -76,7 +76,7 @@ Incluye CRUD según corresponde.
 
 ---
 
-# 📁 Estructura del proyecto
+# Estructura del proyecto
 
 ```
 src/
@@ -100,7 +100,7 @@ src/
 
 ---
 
-# 🚀 Cómo ejecutar el proyecto
+# Cómo ejecutar el proyecto
 
 ### 1. Clonar repositorio
 ```bash
@@ -136,7 +136,7 @@ ng serve -o
 
 ---
 
-# 🧪 Usuarios de prueba
+# Usuarios de prueba
 
 | Email         | Contraseña | Rol    |
 |---------------|------------|--------|
@@ -145,27 +145,27 @@ ng serve -o
 
 ---
 
-# ✔ Funcionalidades por sección
+# Funcionalidades por sección
 
-## 🔹 Alumnos
+##🔹 Alumnos
 - Listado
 - Detalle de alumno
 - Ver cursos inscritos
 - Desinscribir alumno
 
-## 🔹 Cursos
+## Cursos
 - Listado de cursos disponibles
 
-## 🔹 Inscripciones
+## Inscripciones
 - Vista general de inscripciones
 - Preparado para ampliar en el proyecto final
 
-## 🔹 Usuarios (admin)
+## Usuarios (admin)
 - Listado de usuarios registrados
 
 ---
 
-# 🔧 Buenas prácticas aplicadas
+# Buenas prácticas aplicadas
 - Arquitectura escalable
 - Lazy Loading
 - Guards para seguridad
@@ -176,7 +176,7 @@ ng serve -o
 
 ---
 
-# 🙋‍♀️ Autora
+# Autora
 
 **Cristina Guzmán Valdés**  
 Diseñadora UX/UI · Frontend en formación  
