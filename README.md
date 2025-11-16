@@ -1,59 +1,183 @@
-# Proyecto3
+# 📘 Proyecto 3 – Plataforma de Gestión de Cursos  
+**Angular 17 — Coderhouse**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+Este proyecto corresponde a la **Tercera Entrega del Proyecto Final** del curso de Angular de Coderhouse.  
+Se trata de una aplicación web para gestionar:
 
-## Development server
+- **Alumnos**
+- **Cursos**
+- **Inscripciones**
+- **Usuarios (solo admin)**
+- **Autenticación con roles**
+- **Layout completo con Toolbar + Sidenav**
+- **Consumo de API (MockAPI)**
 
-To start a local development server, run:
+El objetivo es aplicar en un solo proyecto todo lo aprendido durante la cursada: módulos, routing avanzado, guards, servicios, interceptores, comunicación con API, lazy loading, buenas prácticas y arquitectura escalable.
 
-```bash
-ng serve
+---
+
+# ⭐ Características principales del proyecto
+
+### 🔐 Autenticación
+- Login con email y contraseña.
+- Servicio `AuthService` conectado a MockAPI.
+- Token almacenado en `localStorage`.
+- Usuario actual disponible mediante un `BehaviorSubject`.
+
+### 💼 Roles
+- Rol **admin** → acceso a *Usuarios* + todo el sistema.
+- Rol **user** → acceso a secciones funcionales (alumnos, cursos, inscripciones).
+- `RoleGuard` protege rutas según permisos.
+
+### 🛡 Protección de rutas
+- `AuthGuard` evita el acceso sin login.
+- Redirecciones automáticas cuando no hay sesión activa.
+
+### 🧱 Arquitectura modular
+- Módulo `auth/`
+- Módulo `layout/`
+- Módulo `core/` (servicios, guards, interceptores)
+- Módulo `shared/`
+- Feature modules:
+  - `alumnos/`
+  - `cursos/`
+  - `inscripciones/`
+  - `usuarios/`
+
+Con Lazy Loading en todas las secciones.
+
+### 🧭 Layout profesional
+- Toolbar con nombre del usuario + logout
+- Sidenav dinámico según rol
+- Router outlet principal
+
+### 📚 Conexión a MockAPI
+El proyecto utiliza endpoints REST para manejar:
+
+- Usuarios
+- Alumnos
+- Cursos
+- Inscripciones
+
+Incluye CRUD según corresponde.
+
+---
+
+# 🏗 Tecnologías utilizadas
+
+- Angular 17
+- TypeScript
+- RxJS
+- HTML + CSS
+- MockAPI
+- Angular Routing
+- Interceptors + Guards
+- LocalStorage para persistencia simple
+
+---
+
+# 📁 Estructura del proyecto
+
+```
+src/
+ ├── app/
+ │   ├── auth/
+ │   ├── core/
+ │   ├── layout/
+ │   ├── features/
+ │   │   ├── alumnos/
+ │   │   ├── cursos/
+ │   │   ├── inscripciones/
+ │   │   └── usuarios/
+ │   ├── app-routing.module.ts
+ │   └── app.module.ts
+ ├── assets/
+ ├── environments/
+ ├── index.html
+ ├── main.ts
+ └── styles.css
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+# 🚀 Cómo ejecutar el proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### 1. Clonar repositorio
 ```bash
-ng generate component component-name
+git clone https://github.com/TU-USUARIO/proyecto3-angular.git
+cd proyecto3-angular
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### 2. Instalar dependencias
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
+### 3. Configurar MockAPI
+En:
 
-To build the project run:
-
-```bash
-ng build
+```
+src/environments/environment.ts
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Coloca la URL base de tu API:
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```ts
+export const environment = {
+  production: false,
+  apiUrl: "https://mockapi.io/tuproject/api"
+};
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### 4. Ejecutar el servidor
 ```bash
-ng e2e
+ng serve -o
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+# 🧪 Usuarios de prueba
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Email         | Contraseña | Rol    |
+|---------------|------------|--------|
+| admin@test.com | 123456     | admin  |
+| user@test.com  | 123456     | user   |
+
+---
+
+# ✔ Funcionalidades por sección
+
+## 🔹 Alumnos
+- Listado
+- Detalle de alumno
+- Ver cursos inscritos
+- Desinscribir alumno
+
+## 🔹 Cursos
+- Listado de cursos disponibles
+
+## 🔹 Inscripciones
+- Vista general de inscripciones
+- Preparado para ampliar en el proyecto final
+
+## 🔹 Usuarios (admin)
+- Listado de usuarios registrados
+
+---
+
+# 🔧 Buenas prácticas aplicadas
+- Arquitectura escalable
+- Lazy Loading
+- Guards para seguridad
+- Interceptor de autenticación
+- RxJS para manejo de estado
+- Models tipados en TypeScript
+- Código organizado en modules
+
+---
+
+# 🙋‍♀️ Autora
+
+**Cristina Guzmán Valdés**  
+Diseñadora UX/UI · Frontend en formación  
+Chile 🇨🇱
